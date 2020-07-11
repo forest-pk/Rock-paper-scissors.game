@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+<title>じゃんけん</title>
+<link rel="stylesheet" href="stylesheet.css">
+
+<script type="text/javascript">
+var jyanken_image = "image/image02.jpg"
+var first_jyanken = "image/image01.jpg"
+ function click1(){
+
+   document.area1.src=jyanken_image;
+   document.getElementById("1").style.display = "none";
+   document.getElementById("button2").style.display = "inline-block";
+   document.getElementById("button3").style.display = "inline-block";
+   document.getElementById("button4").style.display = "inline-block";
+   document.getElementById("reset_button").style.display = "none";
+   const  button2= document.getElementById("button2");
+	if (!button2.hasChildNodes()){
+    //createElementはinputタグを生成
+		const input2 = document.createElement("input");
+    //以下はinputタグに対するもの
+		input2.setAttribute("type","button");
+		input2.setAttribute("value","グー");
+    input2.setAttribute("onClick","click2()");
+		button2.appendChild(input2);
+	}
+  const  button3= document.getElementById("button3");
+ if (!button3.hasChildNodes()){
+   const input3 = document.createElement("input");
+   input3.setAttribute("type","button");
+   input3.setAttribute("value","チョキ");
+   input3.setAttribute("onClick","click3()");
+   button3.appendChild(input3);
+ }
+ const  button4= document.getElementById("button4");
+ if (!button4.hasChildNodes()){
+  const input4 = document.createElement("input");
+  input4.setAttribute("type","button");
+  input4.setAttribute("value","パー");
+  input4.setAttribute("onClick","click4()");
+  button4.appendChild(input4);
+ }
+ //初期画面に戻すボタン
+ const  reset_button= document.getElementById("reset_button");
+ if (!reset_button.hasChildNodes()){
+  const input5 = document.createElement("input");
+  input5.setAttribute("type","button");
+  input5.setAttribute("value","再挑戦");
+  input5.setAttribute("onClick","reset_button()");
+  reset_button.appendChild(input5);
+}
+}
+//初期画面ボタンを押した場合のアクション
+function reset_button(){
+  document.getElementById("button2").style.display = "none";
+  document.getElementById("button3").style.display = "none";
+  document.getElementById("button4").style.display = "none";
+  document.getElementById("reset_button").style.display = "none";
+  document.getElementById("1").style.display = "inline-block";
+  document.area1.src=first_jyanken;
+}
+
+function click2(){
+  document.getElementById("button2").style.display = "none";
+  document.getElementById("button3").style.display = "none";
+  document.getElementById("button4").style.display = "none";
+  document.getElementById("reset_button").style.display = "inlen-block";
+  var rock = "image/グー.jpg"
+  var scissors = "image/チョキ.jpg"
+  var paper = "image/パー.jpg"
+  //パソコンの中にはグー、チョキ、パーはないため代入をする
+  var random = Math.floor(Math.random()*3);
+  var PC_janken = random;
+  if (PC_janken === 0){
+    document.area1.src=rock;
+    alert('引き分け');
+  }
+  if (PC_janken === 1) {
+    document.area1.src=scissors;
+    alert('あなたの勝ち');
+  }
+  if (PC_janken === 2) {
+    document.area1.src=paper;
+    alert('あなたの負け');
+  }
+}
+
+function click3(){
+  document.getElementById("button2").style.display = "none";
+  document.getElementById("button3").style.display = "none";
+  document.getElementById("button4").style.display = "none";
+  document.getElementById("reset_button").style.display = "inline-block";
+  var rock = "image/グー.jpg"
+  var scissors = "image/チョキ.jpg"
+  var paper = "image/パー.jpg"
+  var random = Math.floor(Math.random()*3);
+  var PC_janken = random;
+  if (PC_janken === 0){
+    document.area1.src=rock;
+    alert('あなたの負け');
+  }
+  if (PC_janken === 1) {
+    document.area1.src=scissors;
+    alert('引き分け');
+  }
+  if (PC_janken === 2) {
+    document.area1.src=paper;
+    alert('あなたの勝ち');
+  }
+}
+
+function click4(){
+  document.getElementById("button2").style.display = "none";
+  document.getElementById("button3").style.display = "none";
+  document.getElementById("button4").style.display = "none";
+  document.getElementById("reset_button").style.display = "inline-block";
+  var rock = "image/グー.jpg"
+  var scissors = "image/チョキ.jpg"
+  var paper = "image/パー.jpg"
+  var random = Math.floor(Math.random()*3);
+  var PC_janken = random;
+  if (PC_janken === 0){
+    document.area1.src=rock;
+    alert('あなたの勝ち');
+  }
+  if (PC_janken === 1) {
+    document.area1.src=scissors;
+    alert('あなたの負け');
+  }
+  if (PC_janken === 2) {
+    document.area1.src=paper;
+    alert('引き分け');
+  }
+}
+</script>
+
+</head>
+<body>
+  <div class="main">
+    <img class="main_image" src="image\image01.jpg" name="area1">
+  </div>
+  <div class="btn">
+    <input type="button"　name="じゃんけん" value="じゃんけん" onClick="click1()" id="1"/>
+  </div>
+  <div class="buttons">
+    <div id="button2"></div>
+    <div id="button3"></div>
+    <duv id="button4"></div>
+  </div>
+  <div class="reset">
+    <div id="reset_button"></div>
+  </div>
+</body>
+</html>

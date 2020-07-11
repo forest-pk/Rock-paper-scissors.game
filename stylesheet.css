@@ -1,0 +1,50 @@
+.main {
+  text-align: center;
+  height:100px
+  width:100px;
+}
+
+.btn {
+  text-align: center;
+}
+
+.buttons {
+  display:flex;
+  width:100%;
+  justify-content: space-around;
+}
+
+.main_image {
+  height:500px;
+  width:700px;
+  margin-bottom: 30px;
+}
+
+.jyanken_image {
+  height:500px;
+  width:700px;
+  margin-bottom: 30px;
+}
+
+.rock {
+  height:500px;
+  width:700px;
+  margin-bottom: 30px;
+}
+
+.scissors {
+  height:500px;
+  width:700px;
+  margin-bottom: 30px;
+}
+
+.paper {
+  height:500px;
+  width:700px;
+  margin-bottom: 30px;
+}
+
+.reset {
+  text-align: center;
+  margin-top:20px;
+}
